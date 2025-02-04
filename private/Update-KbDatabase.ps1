@@ -261,7 +261,7 @@ function Update-KbDatabase {
                             # find links that contain windowsupdate.com using regex
 
                             $downloaddialog = $downloaddialog.Replace('www.download.windowsupdate', 'download.windowsupdate')
-                            $links = $downloaddialog | Select-String -AllMatches -Pattern "(http[s]?\://.*download\.windowsupdate\.com\/[^\'\""]*)" | Select-Object -Unique
+                            $links = $downloaddialog | Select-String -AllMatches -Pattern "(http[s]?://.*download\.windowsupdate\.com\/[^\'\""])|(http[s]?://.*catalog\.sf\.dl\.delivery\.mp\.microsoft\.com\/[^\'\""]*)" | Select-Object -Unique
 
                             [pscustomobject]@{
                                 Title             = $title
